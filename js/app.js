@@ -2,16 +2,31 @@ const form = document.querySelector('form');
 const input = document.querySelector('input');
 const ul = document.querySelector('ul');
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+/**
+ * 1. 삭제버튼 추가
+ * 2. 저장
+ * 3. 삭제버튼 기능구현
+ */
 
+const addItem = (text) => {
+  const li = document.createElement('li');
+  const button = document.createElement('button');
+  const span = document.createElement('span');
+  
+  span.innerText = text;
+  
+  li.appendChild(span);
+  ul.appendChild(li);
+}
+
+const handler = (event) => {
+  event.preventDefault();
+  
   const toDo = input.value;
   if(toDo !== ''){
-    const li = document.createElement('li');
-    li.innerText = toDo;
-    ul.appendChild(li);
-
-    input.value = '';
+    addItem(toDo);
   }
-  
-});
+  input.value = '';
+}
+
+form.addEventListener("submit", handler);
