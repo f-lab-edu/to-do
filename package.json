@@ -1,0 +1,16 @@
+{
+  "name": "to-do",
+  "version": "1.0.0",
+  "description": "순수 자바스크립트와 Tailwind CSS를 사용해 만든 간단한 할 일 목록(To-Do) 애플리케이션입니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.3",
+    "tailwindcss": "^4.1.3"
+  }
+}
