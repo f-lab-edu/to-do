@@ -59,7 +59,7 @@ const init = () => {
   const userTodos = JSON.parse(localStorage.getItem('todos'));
   
   if(userTodos){
-    userTodos.array.forEach((todo) => {
+    userTodos.forEach((todo) => {
       addItem(todo);
     });  
   }
