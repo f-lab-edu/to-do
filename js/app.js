@@ -14,6 +14,14 @@ const saveLocalItem = () => {
   localStorage.setItem('todos', JSON.stringify(todos));
 }
 
+const delteItem = (event) => {
+  const target = event.target.parentElement;
+  
+  todos = todos.filter((todo) => todo.id !== parseInt(target.id));
+  saveLocalItem();
+
+  target.remove();
+}
 
 const addItem = (todo) => {
   const li = document.createElement('li');
@@ -21,8 +29,15 @@ const addItem = (todo) => {
   const span = document.createElement('span');
   
   span.innerText = todo.text;
+  button.innerText = '삭제';
+  button.addEventListener('click', delteItem);
+  button.classList.add('bg-violet-500');
+  button.classList.add('border-2');
+  button.classList.add('border-solid');
+  button.classList.add('rounded-xl');
   
   li.appendChild(span);
+  li.appendChild(button);
   ul.appendChild(li);
   li.id = todo.id;
 }
