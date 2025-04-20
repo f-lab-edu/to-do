@@ -1,0 +1,21 @@
+{
+  "name": "to-do",
+  "version": "1.0.0",
+  "description": "순수 자바스크립트와 Tailwind CSS를 사용해 만든 간단한 할 일 목록(To-Do) 애플리케이션입니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f-lab-edu/to-do.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/f-lab-edu/to-do/issues"
+  },
+  "homepage": "https://github.com/f-lab-edu/to-do#readme"
+}
