@@ -1,39 +1,12 @@
-# To-Do
+# React + Vite
 
-순수 자바스크립트와 Tailwind CSS를 사용해 만든 간단한 할 일 목록(To-Do) 애플리케이션입니다.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 기능
+Currently, two official plugins are available:
 
-- 할 일 항목 추가 (추가 버튼 클릭)
-- 할 일 항목 삭제 (삭제 버튼 클릭)
-- 할 일 항목 수정 (수정 버튼 클릭)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 프로젝트 구조
+## Expanding the ESLint configuration
 
-```
-to-do/
-│
-├── index.html                # 메인 HTML 파일
-├── README.md                 # 프로젝트 설명
-│
-├── css/
-│   └── style.css             # 커스텀 CSS 스타일
-│
-├── js/
-│   ├── app.js                # 메인 애플리케이션 로직
-│   └── storage.js            # 로컬 스토리지 관련 기능
-```
-
-## 사용법
-
-1. 입력창에 할 일을 입력합니다.
-2. '추가' 버튼을 클릭하여 할 일을 추가합니다.
-3. 할 일을 수정하려면 해당 항목의 '수정' 버튼을 클릭합니다.
-4. 할 일을 삭제하려면 해당 항목의 '삭제' 버튼을 클릭합니다.
-
-## 기술 스택
-
-- HTML5
-- 순수 자바스크립트(Vanilla JavaScript)
-- Tailwind CSS
-- 로컬 스토리지(Local Storage)
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

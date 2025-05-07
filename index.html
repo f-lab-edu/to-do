@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-
-    </style>
-    <title>ToDo List</title>
+    <title>To Do List</title>
   </head>
   <body>
-    <p class="text-2xl py-2 text-center">To Do List</p>
-    <form>
-      <input class="mt-1 mb-1 w-5/6 rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-sky-500 focus:outline focus:outline-sky-500" type="text" placeholder="할 일을 입력하세요.">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">추가</button>
-    </form>
-    <ul class="list-none"></ul>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
-  <script src="./js/app.js"></script>
 </html>
