@@ -33,10 +33,10 @@ function App() {
     setTodos(filteredTodos);
   }
 
-
+  console.log('렌더링 전 todos:', todos);
   return (
-    <div className=''>
-      <h1>To Do List</h1>
+    <div className='flex flex-col justify-center items-center'>
+      <h1 className='m-8 text-2xl'>To Do List</h1>
       <TodoForm onSubmit={addTodo}/>
       <TodoList todos={todos} deleteTodo={deleteTodo}/>
     </div>
