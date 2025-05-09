@@ -8,6 +8,7 @@ function App() {
 
   useEffect(() => {
     const userTodos = JSON.parse(localStorage.getItem('todos'));
+    console.log("userTods : " , userTodos);
     if(userTodos){
       setTodos(userTodos);
     } 
@@ -22,7 +23,7 @@ function App() {
     if(text.trim() !== ''){
       const newTodo = {
         id : Date.now(),
-        text : text
+        text
       };
       setTodos([...todos, newTodo]);
     }
