@@ -6,7 +6,7 @@ function TodoForm({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(input);
-    setInput(''); // 입력 필드 초기화
+    setInput(''); 
   };
 
   return (

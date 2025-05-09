@@ -2,10 +2,11 @@ import React from 'react'
 import TodoItem from './TodoItem'
 
 function TodoList({todos, deleteTodo}) {
-  
+  console.log(' todos : ' , todos );
   return (
     <ul>
         {todos.map(todo => {
+            console.log(' todo check : ' , todo );
             <TodoItem 
               key={todo.id}
               todo={todo}
@@ -15,5 +16,6 @@ function TodoList({todos, deleteTodo}) {
     </ul>
   )
 }
+
 
 export default TodoList;

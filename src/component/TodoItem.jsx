@@ -11,6 +11,4 @@ function TodoItem({todo, deleteTodo}) {
     )
 }
 
-
-
 export default TodoItem
