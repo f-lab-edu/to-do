@@ -13,7 +13,7 @@ function TodoForm({ onSubmit }) {
     <form onSubmit={handleSubmit}>
       <div className='flex flex-row'>
         <input
-          className="input"
+          className="input mr-4 w-80"
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
