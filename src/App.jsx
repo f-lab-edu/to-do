@@ -8,7 +8,6 @@ function App() {
 
   useEffect(() => {
     const userTodos = JSON.parse(localStorage.getItem('todos'));
-    console.log("userTods : " , userTodos);
     if(userTodos){
       setTodos(userTodos);
     } 
@@ -19,14 +18,17 @@ function App() {
   },[todos]);
 
   const addTodo = (text) => {
-    
-    if(text.trim() !== ''){
-      const newTodo = {
-        id : Date.now(),
-        text
-      };
-      setTodos([...todos, newTodo]);
+
+    if (text.trim() === '') {
+      return
     }
+    
+    const newTodo = {
+      id : Date.now(),
+      text
+    };
+    setTodos([...todos, newTodo]);
+
   }
 
   const deleteTodo = (id) => {
@@ -34,7 +36,6 @@ function App() {
     setTodos(filteredTodos);
   }
 
-  console.log('렌더링 전 todos:', todos);
   return (
     <div className='flex flex-col justify-center items-center'>
       <h1 className='m-8 text-2xl'>To Do List</h1>

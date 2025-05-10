@@ -7,7 +7,7 @@ function TodoList({todos, deleteTodo}) {
     <ul>
         {todos.map(todo => {
             console.log(' todo check : ' , todo );
-            <TodoItem 
+            return <TodoItem 
               key={todo.id}
               todo={todo}
               deleteTodo={deleteTodo}
