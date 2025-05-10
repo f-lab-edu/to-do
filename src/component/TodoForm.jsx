@@ -6,19 +6,23 @@ function TodoForm({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(input);
-    setInput(''); // 입력 필드 초기화
+    setInput(''); 
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        className="input"
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="할 일을 입력하세요."
-      />
-      <button type="submit">추가</button>
+      <div className='flex flex-row'>
+        <input
+          className="input mr-4 w-80"
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="할 일을 입력하세요."
+        />
+        <button 
+          className='btn btn-blue'
+          type="submit">추가</button>
+      </div>
     </form>
   );
 }
