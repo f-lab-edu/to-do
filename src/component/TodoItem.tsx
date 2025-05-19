@@ -1,16 +1,12 @@
 import React from 'react'
-
-type Todo = {
-    id: number;
-    text: string;
-}
+import type { Todo } from '../types'
 
 type TodoItemProps = {
-    todo : Todo;
+    todo: Todo;
     deleteTodo: (id: number) => void;
 }
 
-function TodoItem({todo, deleteTodo} : TodoItemProps) {
+function TodoItem({todo, deleteTodo}: TodoItemProps) {
     return (
         <li className='flex items-center border-b border-teal-500 py-2' id={todo.id.toString()}>
             <span className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none'>{todo.text}</span>

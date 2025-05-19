@@ -1,6 +1,10 @@
 import React, { useState, type ChangeEvent, type FormEvent } from 'react';
 
-function TodoForm({ onSubmit } : any) {
+type TodoFormProps = {
+  onSubmit: (text: string) => void
+}
+
+function TodoForm({ onSubmit }: TodoFormProps) {
   const [input, setInput] = useState('');
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {

@@ -3,21 +3,31 @@ import './App.css'
 import TodoForm from './component/TodoForm';
 import TodoList from './component/TodoList';
 
+type Todo = {
+  id: number; 
+  text: string;
+}
+
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   useEffect(() => {
-    const userTodos = JSON.parse(localStorage.getItem('todos'));
-    if(userTodos){
+    const originTodos = localStorage.getItem('todos');
+    if (!originTodos) {
+      return 
+    }
+
+    const userTodos = JSON.parse(originTodos);
+    if (userTodos) {
       setTodos(userTodos);
     } 
-  },[]);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
   },[todos]);
 
-  const addTodo = (text: String): void => {
+  const addTodo = (text: string): void => {
 
     if (text.trim() === '') {
       return
@@ -27,11 +37,12 @@ function App() {
       id : Date.now(),
       text
     };
+
     setTodos([...todos, newTodo]);
 
   }
 
-  const deleteTodo = (id) => {
+  const deleteTodo = (id: number) => {
     const filteredTodos = todos.filter((todo) => todo.id !== id);
     setTodos(filteredTodos);
   }
