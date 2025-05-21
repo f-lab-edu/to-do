@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, type ChangeEvent, type FormEvent } from 'react';
 
-function TodoForm({ onSubmit }) {
+type TodoFormProps = {
+  onSubmit: (text: string) => void
+}
+
+function TodoForm({ onSubmit }: TodoFormProps) {
   const [input, setInput] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onSubmit(input);
     setInput(''); 
@@ -16,7 +20,7 @@ function TodoForm({ onSubmit }) {
           className="input mr-4 w-80"
           type="text"
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setInput(e.target.value)}
           placeholder="할 일을 입력하세요."
         />
         <button 

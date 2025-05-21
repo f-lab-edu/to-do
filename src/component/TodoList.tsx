@@ -1,7 +1,13 @@
 import React from 'react'
 import TodoItem from './TodoItem'
+import type { Todo } from '../types'
 
-function TodoList({todos, deleteTodo}) {
+type TodoListProps = {
+    todos : Todo[];
+    deleteTodo: (id: number) => void;
+}
+
+function TodoList({todos, deleteTodo}: TodoListProps) {
   return (
     <ul>
         {todos.map(todo => {
