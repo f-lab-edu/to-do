@@ -2,6 +2,7 @@ import { useState , useEffect} from 'react'
 import './css/App.css'
 import TodoForm from './component/TodoForm';
 import TodoList from './component/TodoList';
+import Router from './Router';
 
 type Todo = {
   id: number; 
@@ -48,11 +49,15 @@ function App() {
   }
 
   return (
-    <div className='flex flex-col justify-center items-center'>
-      <h1 className='m-8 text-2xl'>To Do List</h1>
-      <TodoForm onSubmit={addTodo}/>
-      <TodoList todos={todos} deleteTodo={deleteTodo}/>
-    </div>
+    <>
+      <Router />
+      <div className='flex flex-col justify-center items-center'>
+        <h1 className='m-8 text-2xl'>To Do List</h1>
+        <TodoForm onSubmit={addTodo}/>
+        <TodoList todos={todos} deleteTodo={deleteTodo}/>
+      </div>
+    </>
+    
   );
 }
 
