@@ -3,16 +3,17 @@ import type { Todo } from '../types'
 
 type TodoItemProps = {
     todo: Todo;
-    deleteTodo: (id: number) => void;
+    //deleteTodo: (id: number) => void;
 }
 
-const goToDetailTodo = () => {
-    console.log(' ====== goToDetailTodo ======= ');
+function TodoItem({todo}: TodoItemProps) {
+
     const navigate = useNavigate();
-    navigate("/pages/DetailTodoPage");
-}
-
-function TodoItem({todo, deleteTodo}: TodoItemProps) {
+    const goToDetailTodo = () => {
+        console.log(' ====== goToDetailTodo ======= ');
+        navigate("/detail");
+    }
+    
     return (
         <li className='flex items-center border-b border-teal-500 py-2' id={todo.id.toString()}>
             <span className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none'>{todo.text}</span>
