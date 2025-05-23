@@ -13,5 +13,5 @@
 }
 
 .input {
-    @apply rounded-lg border-1 border-blue-500 border-solid
+  @apply rounded-lg border-1 border-blue-500 border-solid
 }
