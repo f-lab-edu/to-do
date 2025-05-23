@@ -10,8 +10,11 @@ function TodoItem({todo}: TodoItemProps) {
 
     const navigate = useNavigate();
     const goToDetailTodo = () => {
-        console.log(' ====== goToDetailTodo ======= ');
-        navigate("/detail");
+        navigate("/detail", {
+            state : {
+                id: todo.id
+            }
+        });
     }
     
     return (
