@@ -1,8 +1,8 @@
 import React, { useState, type ChangeEvent, type FormEvent } from 'react';
 
 type TodoFormProps = {
-  onSubmit: (text: string) => void
-}
+  onSubmit: (text: string) => void;
+};
 
 function TodoForm({ onSubmit }: TodoFormProps) {
   const [input, setInput] = useState('');
@@ -10,22 +10,24 @@ function TodoForm({ onSubmit }: TodoFormProps) {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onSubmit(input);
-    setInput(''); 
+    setInput('');
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div className='flex flex-row'>
         <input
-          className="input mr-4 w-80"
-          type="text"
+          className='input mr-4 w-80'
+          type='text'
           value={input}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => setInput(e.target.value)}
-          placeholder="할 일을 입력하세요."
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setInput(e.target.value)
+          }
+          placeholder='할 일을 입력하세요.'
         />
-        <button 
-          className='btn btn-blue'
-          type="submit">추가</button>
+        <button className='btn btn-blue' type='submit'>
+          추가
+        </button>
       </div>
     </form>
   );

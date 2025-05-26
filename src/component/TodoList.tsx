@@ -1,24 +1,19 @@
-import TodoItem from './TodoItem'
-import type { Todo } from '../types'
+import TodoItem from './TodoItem';
+import type { Todo } from '../types';
 
 type TodoListProps = {
-    todos : Todo[];
-    deleteTodo: (id: number) => void;
-}
+  todos: Todo[];
+  deleteTodo: (id: number) => void;
+};
 
-function TodoList({todos, deleteTodo}: TodoListProps) {
+function TodoList({ todos, deleteTodo }: TodoListProps) {
   return (
     <ul>
-        {todos.map(todo => {
-            return <TodoItem 
-              key={todo.id}
-              todo={todo}
-              deleteTodo={deleteTodo}
-            />
-        })}
+      {todos.map(todo => {
+        return <TodoItem key={todo.id} todo={todo} deleteTodo={deleteTodo} />;
+      })}
     </ul>
-  )
+  );
 }
-
 
 export default TodoList;
