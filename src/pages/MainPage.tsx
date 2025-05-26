@@ -20,6 +20,9 @@ function MainPage() {
   }, []);
 
   useEffect(() => {
+    if (todos.length === 0) {
+      return;
+    }
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
 
