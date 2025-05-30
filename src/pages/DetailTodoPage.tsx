@@ -17,17 +17,23 @@ function DetailTodoPage() {
     navigate('/');
   };
 
+  const deleteTodo = () => {
+    const filteredTodos = todos.filter(todo => todo.id !== todoId);
+    localStorage.setItem('todos', JSON.stringify(filteredTodos));
+    goList();
+  };
+
   return (
     <div className='flex flex-col justify-center items-center'>
       <h1 className='m-8 text-2xl'>상세 페이지</h1>
-      <textarea className='resize-y rounded-md'>
+      <textarea className='resize-y rounded-md mb-8'>
         {currentTodo?.text || '-'}
       </textarea>
       <div>
         <button className='btn btn-blue mr-4' onClick={goList}>
           수정
         </button>
-        <button className='btn btn-blue mr-4' onClick={goList}>
+        <button className='btn btn-blue mr-4' onClick={deleteTodo}>
           삭제
         </button>
         <button className='btn btn-blue mr-4' onClick={goList}>

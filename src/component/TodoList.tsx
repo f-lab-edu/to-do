@@ -8,7 +8,7 @@ type TodoListProps = {
 
 function TodoList({ todos, deleteTodo }: TodoListProps) {
   return (
-    <ul>
+    <ul className='w-96'>
       {todos.map(todo => {
         return <TodoItem key={todo.id} todo={todo} deleteTodo={deleteTodo} />;
       })}
