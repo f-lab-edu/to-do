@@ -49,6 +49,11 @@ function MainPage() {
       <h1 className='m-8 text-2xl'>To Do List</h1>
       <TodoForm onSubmit={addTodo} />
       <TodoList todos={todos} deleteTodo={deleteTodo} />
+
+      <div>
+        <button className='mr-8 text-gray-400 '>이전</button>
+        <button className='text-gray-400 '>다음</button>
+      </div>
     </div>
   );
 }
