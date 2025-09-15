@@ -45,7 +45,9 @@ function MainPage() {
       text,
     };
 
-    setTodos([...todos, newTodo]);
+    //setTodos([...todos, newTodo]);
+    setTodos([newTodo, ...todos]);
+    setCurrentPage(1);
   };
 
   const deleteTodo = (id: number) => {
@@ -57,7 +59,6 @@ function MainPage() {
     <div className='flex flex-col justify-center items-center'>
       <h1 className='m-8 text-2xl'>To Do List</h1>
       <TodoForm onSubmit={addTodo} />
-      {/* <TodoList todos={todos} deleteTodo={deleteTodo} /> */}
       <TodoList todos={getCurrentTodos()} deleteTodo={deleteTodo} />
 
       {totalPages > 1 && (
