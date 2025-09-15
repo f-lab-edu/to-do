@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import '../css/App.css';
-import TodoForm from '../component/TodoForm';
-import TodoList from '../component/TodoList';
-import type { Todo } from '../types';
+import '@/css/App.css';
+import TodoForm from '@/component/TodoForm';
+import TodoList from '@/component/TodoList';
+import type { Todo } from '@/types';
 
 function MainPage() {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -86,7 +86,7 @@ function MainPage() {
           ))}
           
           <button 
-            className='bg-pink-600'
+            className='bg-pink-200'
             onClick={() => setCurrentPage(currentPage + 1)}
             disabled={currentPage === totalPages}
           >
